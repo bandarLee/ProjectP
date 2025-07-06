@@ -32,14 +32,12 @@ public class NPC_Base : MonoBehaviour
     {
         if (state != NPCState.WalkIn) return;
 
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            arrivePosition.position,
-            speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position,arrivePosition.position, speed * Time.deltaTime);
+
 
         if (Vector3.Distance(transform.position, arrivePosition.position) < 0.05f)
         {
-            ChangeState(state, "Arrive", true);
+            ChangeState(NPCState.Order, "Arrive", true);
         }
     }
     private void ChangeState(NPCState newState, string animationBool, bool value)
