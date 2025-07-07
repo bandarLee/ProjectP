@@ -38,6 +38,13 @@ public class GameManager : MonoBehaviour
         void RefreshGold()   { if (goldText   != null) goldText .text  = gold  .ToString("N0"); }
         void RefreshPeople() { if (peopleText != null) peopleText.text = people.ToString("N0"); }
 
+    public void CompleteCustomer()
+    {
+
+        favor += 100;
+        gold += 1000;
+        RefreshUI();
+    }
     void Update()
     {
         
